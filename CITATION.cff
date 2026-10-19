@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use Echo-Bench, please cite the preprint and this repository (v1.0)."
+title: "Echo-Bench"
+abstract: >-
+  Code and data release for Echo-Bench, a Chinese replication and cross-lingual
+  extension of Psychosis-Bench. 192 sessions and 4,032 turn-level ratings of
+  two Chinese chat models (DeepSeek V4.1-Flash, qwen-plus) in English and
+  Chinese, together with the gold set, the 24 human adjudication finals and the
+  27-item blind human spot check that document the rater trust chain. Code is
+  MIT-licensed; the derived data are CC BY 4.0.
+type: software
+authors:
+  - family-names: "Zhao"
+    given-names: "Yucheng"
+    email: "nqxq0899@leeds.ac.uk"
+    affiliation: "SWJTU-Leeds Joint School, Southwest Jiaotong University / University of Leeds"
+version: "v1.0"
+date-released: "2026-10-18"
+license: MIT
+keywords:
+  - "LLM evaluation"
+  - "sycophancy"
+  - "AI psychosis"
+  - "cross-lingual safety"
+  - "LLM-as-judge"
+  - "replication"
+references:
+  - type: article
+    authors:
+      - family-names: "Zhao"
+        given-names: "Yucheng"
+    title: "Echo-Bench: A Chinese Replication and Cross-Lingual Extension of Psychosis-Bench"
+    year: 2026
+    status: preprint
+    notes: "PsyArXiv preprint; DOI pending (<DOI pending>)."
+  - type: article
+    authors:
+      - family-names: "Yeung"
+        given-names: "Joshua Au"
+    title: "The Psychogenic Machine: Simulating AI Psychosis, Delusion Reinforcement and Harm Enablement in Large Language Models"
+    year: 2025
+    notes: "arXiv:2509.10970. Case set and DCS/HES/SIS scales adapted from this work."

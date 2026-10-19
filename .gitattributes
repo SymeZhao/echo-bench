@@ -1,0 +1,3 @@
+# Preserve byte-exact content so that MANIFEST.sha256 verifies unchanged after clone,
+# on every platform and regardless of the cloner's core.autocrlf setting.
+* -text

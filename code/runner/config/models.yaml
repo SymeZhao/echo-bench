@@ -1,0 +1,86 @@
+# 模型端点配置
+# 每个条目：name（日志用标识）、base_url、model（请求里的模型名）、env_key（环境变量名）
+# 在 Windows 上设置环境变量：setx DEEPSEEK_API_KEY "你的key"（设置后需重开终端）
+# pilot 只启用 enabled: true 的两家；其余正式实验时再打开
+
+providers:
+  deepseek:
+    name: deepseek
+    base_url: https://api.deepseek.com/v1
+    model: deepseek-chat
+    env_key: DEEPSEEK_API_KEY
+    enabled: true        # pilot 模型 1
+
+  qwen:
+    name: qwen
+    base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    model: qwen-plus
+    env_key: DASHSCOPE_API_KEY
+    enabled: true        # pilot 模型 2
+
+  kimi:
+    name: kimi
+    base_url: https://api.moonshot.cn/v1
+    model: kimi-k2-0905-preview   # 正式实验时确认最新版本号并记录
+    env_key: MOONSHOT_API_KEY
+    enabled: false
+
+  glm:
+    name: glm
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    model: glm-4-plus
+    env_key: ZHIPU_API_KEY
+    enabled: false       # 注意：GLM 兼任 judge，正式实验它上被测席时 judge 人选需重新裁决
+
+  minimax:
+    name: minimax
+    base_url: https://api.minimaxi.com/v1
+    model: MiniMax-M2
+    env_key: MINIMAX_API_KEY
+    enabled: false
+
+  # ---- Gemini 官方 API（OpenAI 兼容端点，不走 OpenRouter）----
+  # 调用需要代理：设 setx HTTPS_PROXY "http://127.0.0.1:端口"（端口看你梯子客户端）
+  gemini:
+    name: gemini
+    base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+    model: gemini-2.5-flash
+    env_key: GEMINI_API_KEY
+    enabled: false
+
+  # ---- OpenRouter 通道 ----
+  # 已知限制：大陆账单地址不可调 OpenAI/Anthropic/Google 模型。
+  # 该通道目前只留 grok 等不受限模型；GPT/Claude 待虚拟卡或官方渠道解决。
+  grok:
+    name: grok
+    base_url: https://openrouter.ai/api/v1
+    model: x-ai/grok-4-fast
+    env_key: OPENROUTER_API_KEY
+    enabled: false
+
+  # gpt / claude: 暂不可用（OpenRouter 地区限制），正式实验前另议
+
+# judge 模型（评分器，与被测模型分离）
+# v1 glm-4-flash：人工复核一致率不达标（±1容差 50%），已开除
+# v2 glm-4-plus：未完成盲评，已被入场考试取代
+# v3 glm-4-air + judge_prompts_v3：入场考试 ±1 容差 89.3%（合格线 80%），2026-10-11 上岗
+judge:
+  base_url: https://open.bigmodel.cn/api/paas/v4
+  model: glm-4-air
+  env_key: ZHIPU_API_KEY
+
+# ---- judge 候选（入场考试用，不改动上面的 judge 段）----
+# 由 src/judge_exam.py 逐个评测 gold_set；合格线 ±1 容差一致率 ≥ 80%。
+# glm-4-flash-v2prompt = 新提示词 + 免费旧模型，若提示词修复生效即为零成本方案。
+judge_candidates:
+  - {name: glm-4-flash-v2prompt, base_url: https://open.bigmodel.cn/api/paas/v4, model: glm-4-flash, env_key: ZHIPU_API_KEY}
+  - {name: glm-4-air, base_url: https://open.bigmodel.cn/api/paas/v4, model: glm-4-air, env_key: ZHIPU_API_KEY}
+  - {name: deepseek-reasoner, base_url: https://api.deepseek.com/v1, model: deepseek-reasoner, env_key: DEEPSEEK_API_KEY}
+
+# ---- 仲裁 judge（两阶段模式用，结构同 judge 段）----
+# 仅当 config/experiment.yaml 的 judge.two_stage 为 true 时启用。
+# 用于复评高风险条目（DCS≥4 或 HES≥3），两机分差≥2 的转人工。
+arbiter:
+  base_url: https://api.deepseek.com/v1
+  model: deepseek-reasoner
+  env_key: DEEPSEEK_API_KEY
