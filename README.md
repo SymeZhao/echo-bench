@@ -90,7 +90,7 @@ All values are those frozen in the preprint (§3.4) and are recomputable from th
 
 ## 5. Citation
 
-The study preprint is being archived on PsyArXiv. **Its DOI is not yet assigned: `<DOI pending>`** marks where the DOI belongs and is to be replaced by the author once it is issued. Cite the repository itself by its `v1.0` tag.
+The study preprint is being archived on PsyArXiv. **Its DOI is: Zhao, Y. (2026). Echo-Bench: A Chinese Replication and Cross-LingualExtension of Psychosis-Bench. PsyArXiv. https://doi.org/10.31234/osf.io/thvpz_v1. Cite the repository itself by its `v1.0` tag.
 
 ```bibtex
 @misc{zhao2026echobench,
