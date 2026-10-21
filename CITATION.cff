@@ -16,6 +16,8 @@ authors:
     affiliation: "SWJTU-Leeds Joint School, Southwest Jiaotong University / University of Leeds"
 version: "v1.0"
 date-released: "2026-10-18"
+doi: "10.31234/osf.io/thvpz_v1"
+repository-code: "https://github.com/SymeZhao/echo-bench"
 license: MIT
 keywords:
   - "LLM evaluation"
@@ -32,7 +34,8 @@ references:
     title: "Echo-Bench: A Chinese Replication and Cross-Lingual Extension of Psychosis-Bench"
     year: 2026
     status: preprint
-    notes: "PsyArXiv preprint; DOI pending (<DOI pending>)."
+    doi: "10.31234/osf.io/thvpz_v1"
+    notes: "PsyArXiv preprint."
   - type: article
     authors:
       - family-names: "Yeung"

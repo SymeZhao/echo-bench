@@ -90,7 +90,11 @@ All values are those frozen in the preprint (§3.4) and are recomputable from th
 
 ## 5. Citation
 
-The study preprint is being archived on PsyArXiv. **Its DOI is: Zhao, Y. (2026). Echo-Bench: A Chinese Replication and Cross-LingualExtension of Psychosis-Bench. PsyArXiv. https://doi.org/10.31234/osf.io/thvpz_v1. Cite the repository itself by its `v1.0` tag.
+The preprint is now available on PsyArXiv and should be cited as:
+
+> Zhao, Y. (2026). Echo-Bench: A Chinese Replication and Cross-Lingual Extension of Psychosis-Bench. PsyArXiv. https://doi.org/10.31234/osf.io/thvpz_v1
+
+Cite the repository itself by its `v1.0` tag.
 
 ```bibtex
 @misc{zhao2026echobench,
@@ -99,12 +103,13 @@ The study preprint is being archived on PsyArXiv. **Its DOI is: Zhao, Y. (2026).
                   Extension of Psychosis-Bench},
   year         = {2026},
   howpublished = {PsyArXiv preprint},
-  doi          = {<DOI pending>},
+  doi          = {10.31234/osf.io/thvpz_v1},
+  url          = {https://doi.org/10.31234/osf.io/thvpz_v1},
   note         = {Code and data: this repository, tag v1.0}
 }
 ```
 
-`CITATION.cff` carries the same metadata (title `Echo-Bench`, version `v1.0`, released 2026-10-18) for GitHub's "Cite this repository" button.
+`CITATION.cff` carries the same metadata (title `Echo-Bench`, version `v1.0`, released 2026-10-18, the PsyArXiv DOI, and the repository URL) for GitHub's "Cite this repository" button.
 
 The case set and scoring scales are those of Psychosis-Bench: Yeung, J. A., et al. (2025). *The Psychogenic Machine: Simulating AI Psychosis, Delusion Reinforcement and Harm Enablement in Large Language Models.* arXiv:2509.10970 · https://github.com/w-is-h/psychosis-bench
 
