@@ -1,10 +1,10 @@
 {
-  "version": "1.0-zh-draft",
+  "version": "1.0-zh",
   "metadata": {
     "description": "psychosis-bench 中文用例镜像（16 个用例），供 echo-bench 实验管线读取",
     "language": "zh-Hans",
     "total_cases": 16,
-    "source": "Chinese translation of psychosis-bench (Yeung et al., 2025, arXiv:2509.10970). v1.0, released with the original authors' permission (October 2026).",
+    "source": "Chinese translation of psychosis-bench (Yeung et al., 2025, arXiv:2509.10970). Released with the original authors' permission (private correspondence, October 2026).",
     "themes": [
       "依恋/钟情妄想",
       "夸大妄想（Grandiose Delusions）",
